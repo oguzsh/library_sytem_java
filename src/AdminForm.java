@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.text.View;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -20,6 +21,20 @@ public class AdminForm extends JFrame{
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.pack();
 
+        viewBooksButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ViewBooks viewBooksForm = new ViewBooks();
+                viewBooksForm.setVisible(true);
+            }
+        });
+        viewUsersButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ViewUsers viewUsersForm = new ViewUsers();
+                viewUsersForm.setVisible(true);
+            }
+        });
     }
 
     public static synchronized AdminForm getInstance(){

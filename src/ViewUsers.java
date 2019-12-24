@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
 public class ViewUsers extends JFrame{
     private JPanel viewUsersPanel;
@@ -7,7 +8,11 @@ public class ViewUsers extends JFrame{
     ViewUsers(){
         super("View Users");
         this.setContentPane(this.viewUsersPanel);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);;
         this.pack();
+
+        DefaultTableModel userDataModel = (DefaultTableModel) viewUsersTable.getModel();
+        Database db = new Database();
+        viewUsersTable.setModel(db.viewUsers(userDataModel));
     }
 }

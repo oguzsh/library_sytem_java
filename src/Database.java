@@ -1,7 +1,6 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import javax.swing.table.DefaultTableModel;
+import java.sql.*;
+import java.util.Vector;
 
 public class Database {
     private Connection con = null;
@@ -31,6 +30,61 @@ public class Database {
         }
 
         return stat;
+    }
+
+
+    public DefaultTableModel viewBooks(DefaultTableModel dataModel){
+        connect();
+        try{
+            rs = stat.executeQuery("SELECT * FROM books");
+            ResultSetMetaData md = rs.getMetaData();
+
+            int columnCount = md.getColumnCount();
+            for(int i = 1; i <= columnCount; i++ ){
+                dataModel.addColumn(md.getColumnName(i));
+            }
+
+            Vector<String> row;
+            while(rs.next()){
+                row = new Vector<>(columnCount);
+                for(int i = 1; i<=columnCount; i++){
+                    row.add(rs.getString(i));
+                }
+                dataModel.addRow(row);
+            }
+        } catch (SQLException e) {
+            System.out.println("Hata : " + e);
+        }
+
+        closeDb();
+        return dataModel;
+    }
+
+    public DefaultTableModel viewUsers(DefaultTableModel dataModel){
+        connect();
+        try{
+            rs = stat.executeQuery("SELECT * FROM users");
+            ResultSetMetaData md = rs.getMetaData();
+
+            int columnCount = md.getColumnCount();
+            for(int i = 1; i <= columnCount; i++ ){
+                dataModel.addColumn(md.getColumnName(i));
+            }
+
+            Vector<String> row;
+            while(rs.next()){
+                row = new Vector<>(columnCount);
+                for(int i = 1; i<=columnCount; i++){
+                    row.add(rs.getString(i));
+                }
+                dataModel.addRow(row);
+            }
+        } catch (SQLException e) {
+            System.out.println("Hata : " + e);
+        }
+
+        closeDb();
+        return dataModel;
     }
 
     public void closeDb(){
