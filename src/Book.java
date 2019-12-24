@@ -1,4 +1,4 @@
-public class Book {
+public class Book{
 
     private String bookName;
     private String authorName;
@@ -13,14 +13,7 @@ public class Book {
         this.publisher = publisher;
         this.isbn = isbn;
 
-        System.out.println("Kitap oluşturuldu");
+        System.out.println("Book created");
     }
 
-    public void addBook(Book book){
-
-    }
-
-    public void removeBook(int bookId){
-
-    }
 }

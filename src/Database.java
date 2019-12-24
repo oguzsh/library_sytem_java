@@ -5,8 +5,8 @@ import java.sql.Statement;
 
 public class Database {
     private Connection con = null;
-    private Statement stat = null;
-    private ResultSet rs = null;
+    public Statement stat = null;
+    public ResultSet rs = null;
 
     private final String driver = "com.mysql.cj.jdbc.Driver";
     private final String dbName = "library_system";

@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1c0ff3c-6e2e-4d23-9d80-e059c0b6bb3d" name="Default Changelist" comment="" />
+    <list default="true" id="b1c0ff3c-6e2e-4d23-9d80-e059c0b6bb3d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Admin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Author.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoginForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoginForm.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoginForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoginForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UserForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserForm.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,10 +21,17 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1VP5GpuWic8cbukIBIf4U5B43C5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -69,14 +86,14 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1577146934335">
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1577189769079">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1577146934335" />
-    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1577142214516">
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1577189769079" />
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1577188565661">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.834@0.0.1536.834" timestamp="1577142214516" />
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.834@0.0.1536.834" timestamp="1577188565661" />
     <state x="528" y="289" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1577146897631">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -85,29 +102,29 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="473" y="160" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1577141821805" />
-    <state width="1493" height="213" key="GridCell.Tab.0.bottom" timestamp="1577147134182">
+    <state width="1493" height="213" key="GridCell.Tab.0.bottom" timestamp="1577191273936">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1577147134182" />
-    <state width="1493" height="213" key="GridCell.Tab.0.center" timestamp="1577147134182">
+    <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1577191273936" />
+    <state width="1493" height="213" key="GridCell.Tab.0.center" timestamp="1577191273936">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1577147134182" />
-    <state width="1493" height="213" key="GridCell.Tab.0.left" timestamp="1577147134182">
+    <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1577191273936" />
+    <state width="1493" height="213" key="GridCell.Tab.0.left" timestamp="1577191273936">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1577147134182" />
-    <state width="1493" height="213" key="GridCell.Tab.0.right" timestamp="1577147134182">
+    <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1577191273936" />
+    <state width="1493" height="213" key="GridCell.Tab.0.right" timestamp="1577191273936">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1577147134182" />
+    <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1577191273936" />
     <state x="249" y="0" key="SettingsEditor" timestamp="1577141824913">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="249" y="0" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1577141824913" />
-    <state x="511" y="47" key="refactoring.ChangeSignatureDialog" timestamp="1577145651478">
+    <state x="511" y="47" key="refactoring.ChangeSignatureDialog" timestamp="1577188031529">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="511" y="47" key="refactoring.ChangeSignatureDialog/0.0.1536.834@0.0.1536.834" timestamp="1577145651478" />
+    <state x="511" y="47" key="refactoring.ChangeSignatureDialog/0.0.1536.834@0.0.1536.834" timestamp="1577188031529" />
   </component>
 </project>

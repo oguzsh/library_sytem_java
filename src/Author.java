@@ -1,23 +1,10 @@
-public class Author extends User {
+public class Author extends Person {
     private int age;
 
-    Author(String firstName, String lastName, int age) {
-        super(firstName, lastName);
+    Author(String name, String lastname, int age){
+        super(name, lastname);
         this.age = age;
-    }
-
-    @Override
-    public void add() {
-
-    }
-
-    @Override
-    public void remove() {
-
-    }
-
-    @Override
-    public void update() {
-
+        System.out.println("Author created :");
+        System.out.println(name + "\t" + lastname + "\t" + age);
     }
 }
