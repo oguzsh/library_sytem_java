@@ -3,7 +3,7 @@ import javax.swing.table.DefaultTableModel;
 import java.sql.*;
 import java.util.Vector;
 
-public class Database {
+public class Database implements IBook{
     private Connection con = null;
     public Statement stat = null;
     public ResultSet rs = null;
@@ -37,27 +37,34 @@ public class Database {
     public DefaultTableModel viewBooks(DefaultTableModel dataModel){
         connect();
         try{
+            // Tablolardan books tablosu seçildi
             rs = stat.executeQuery("SELECT * FROM books");
+            // Veritabanı teknik bilgileri alındı ( satır-sütun sayısı vs.)
             ResultSetMetaData md = rs.getMetaData();
 
+            // Tablonun sütun sayısı öğrenildi değişkene atıldı ve sutünlardaki veriler tek tek okundu ve ekledik
             int columnCount = md.getColumnCount();
             for(int i = 1; i <= columnCount; i++ ){
                 dataModel.addColumn(md.getColumnName(i));
             }
 
-            Vector<String> row;
-            while(rs.next()){
-                row = new Vector<>(columnCount);
+
+            Vector<String> row; //String tipinde bir vektör oluşturup adına row dedik
+
+
+            while(rs.next()){   //içerideki veri bitene kadar okuyoruz
+                row = new Vector<>(columnCount);  //oluşturduğumuz row değişkenine sütun sayısı kadar vektör oluşturup row'a attık
                 for(int i = 1; i<=columnCount; i++){
-                    row.add(rs.getString(i));
+                    row.add(rs.getString(i)); // satırlara verileri yerleştirdik
                 }
+                // Bütün veriyi row değişkeni ile dataModel e ekledik
                 dataModel.addRow(row);
             }
         } catch (SQLException e) {
             System.out.println("Hata : " + e);
         }
 
-        closeDb();
+        closeDb(); //veritabanı bağlantısını kapatıyoruz
         return dataModel;
     }
 
@@ -104,6 +111,31 @@ public class Database {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+    }
+
+    @Override
+    public void addBook(Book book){
+        connect();
+        try {
+            String query = "INSERT INTO books(bookName, authorName, releaseDate, publisher, ISBN) VALUES (?,?,?,?,?);";
+            PreparedStatement p_stat = con.prepareStatement(query);
+            p_stat.setString(1, book.getBookName());
+            p_stat.setString(2, book.getAuthorName());
+            p_stat.setString(3, book.getReleaseDate());
+            p_stat.setString(4, book.getPublisher());
+            p_stat.setString(5, book.getIsbn());
+            p_stat.executeUpdate();
+            p_stat.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @Override
+    public void removeBook(int bookId) {
 
     }
 

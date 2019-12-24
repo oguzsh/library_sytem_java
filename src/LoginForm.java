@@ -21,9 +21,13 @@ public class LoginForm extends JFrame{
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+               //kullanıcının girdiği tc ve passwordu alıyoruz
+
                 String identify_num = identifyField.getText();
                 String password = passwordField.getText();
 
+                // kullanıcının girdiği değerler boşsa kullanıcıya uyarı mesajı veriyoruz
                 if(identify_num.equals("")){ // If identify num is null
                     JOptionPane.showMessageDialog(null,"Please enter identify number");
                 }
@@ -31,25 +35,27 @@ public class LoginForm extends JFrame{
                     JOptionPane.showMessageDialog(null,"Please enter password");
                 }
                 else{
-                    Database db = new Database();
+                    Database db = new Database(); //veri tabanını çağırdık
                     try{
-                        db.connect();
+                        db.connect(); // veri tabanına bağlandık
                         db.stat.executeUpdate("USE library_system"); // Use the database with the name "library_system"
+
+                        //kullanıcının girdiği identify_num ile passwordu veri tabanında sorgulatıyoruz
                         String query = ("SELECT * FROM users WHERE identif_number='"+identify_num+"' AND password='"+password+"'");
                         db.rs = db.stat.executeQuery(query);
                         if(!db.rs.next()){
                             System.out.print("No user");
                         }
                         else{
-                            db.rs.beforeFirst();  //Move the pointer above
+                            db.rs.beforeFirst();  // Kullanıcı bilgileri veri tabanında eşleşmişse tüm veri tabanını taramasını istemiyoruz ve sorgunun başına dönüyoruz
                             while(db.rs.next())
                             {
                                 String admin = db.rs.getString("role"); //user is admin
-                                if(admin.equals("admin")) { //If boolean value 1
-                                    goToAdminForm(e); //redirect to admin menu
+                                if(admin.equals("admin")) { // Eğer eşleşirse true döndür
+                                    goToAdminForm(e); // Admin menüye git
                                 }
                                 else{
-                                    goToUserForm(e); //redirect to user menu for that user ID
+                                    goToUserForm(e); // User menüye git
                                 }
                             }
                         }
@@ -86,3 +92,4 @@ public class LoginForm extends JFrame{
         EventQueue.invokeLater(() -> LoginForm.getInstance().setVisible(false));
     }
 }
+

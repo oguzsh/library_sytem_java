@@ -10,7 +10,7 @@ public class AdminForm extends JFrame{
     private JButton addBookButton;
     private JButton viewIssuedBooksButton;
     private JButton addUserButton;
-    private JButton createResetDBButton;
+    private JButton logoutButton;
     private JButton issueBookButton;
 
     private static AdminForm f = null;
@@ -18,7 +18,7 @@ public class AdminForm extends JFrame{
     AdminForm(){
         super("Admin Functions");
         this.setContentPane(this.adminPanel);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.pack();
 
         viewBooksButton.addActionListener(new ActionListener() {
@@ -42,6 +42,19 @@ public class AdminForm extends JFrame{
                 addUserForm.setVisible(true);
             }
         });
+        logoutButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                goToLoginForm(actionEvent);
+            }
+        });
+        addBookButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                AddBookForm addBookForm = new AddBookForm();
+                addBookForm.setVisible(true);
+            }
+        });
     }
 
     public static synchronized AdminForm getInstance(){
@@ -53,6 +66,11 @@ public class AdminForm extends JFrame{
             System.out.println(e.toString());
         }
         return f;
+    }
+
+    private void goToLoginForm(ActionEvent evt) {
+        LoginForm.getInstance().setVisible(true);
+        this.dispose();
     }
 
 }

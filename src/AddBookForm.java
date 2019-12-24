@@ -1,4 +1,6 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class AddBookForm extends JFrame {
     private JPanel addBookPanel;
@@ -14,5 +16,22 @@ public class AddBookForm extends JFrame {
         this.setContentPane(this.addBookPanel);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.pack();
+
+        Database db = new Database();
+
+        addBookButton.addActionListener(new ActionListener() {
+            String bookName = bookNameField.getText();
+            String author = authorField.getText();
+            String releaseDate = releaseDateField.getText();
+            String ISBN = isbnField.getText();
+            String publisher = publisherField.getText();
+
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                Book book = new Book(bookName, author, releaseDate, publisher, ISBN);
+                db.addBook(book);
+                JOptionPane.showMessageDialog(addBookPanel, "Book created");
+            }
+        });
     }
 }
