@@ -1,4 +1,4 @@
-public class Librarian extends Account implements ISearch, IBook{
+public class Librarian implements ISearch, IBook{
 
     @Override
     public void addBook(Book book) {

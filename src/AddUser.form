@@ -60,7 +60,7 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="c7d64" class="javax.swing.JLabel" binding="firstNameField">
+              <component id="c7d64" class="javax.swing.JLabel">
                 <constraints>
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -68,7 +68,7 @@
                   <text value="First Name"/>
                 </properties>
               </component>
-              <component id="1f9e0" class="javax.swing.JTextField" default-binding="true">
+              <component id="1f9e0" class="javax.swing.JTextField" binding="firstNameField">
                 <constraints>
                   <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
@@ -96,7 +96,7 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="4c6e" class="javax.swing.JLabel" binding="lastNameField">
+              <component id="4c6e" class="javax.swing.JLabel">
                 <constraints>
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -104,7 +104,7 @@
                   <text value="Last Name"/>
                 </properties>
               </component>
-              <component id="f153e" class="javax.swing.JTextField" default-binding="true">
+              <component id="f153e" class="javax.swing.JTextField" binding="lastNameField">
                 <constraints>
                   <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
@@ -132,7 +132,7 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="1a26" class="javax.swing.JLabel" binding="passwdField">
+              <component id="1a26" class="javax.swing.JLabel">
                 <constraints>
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -140,13 +140,15 @@
                   <text value="Password"/>
                 </properties>
               </component>
-              <component id="d54dd" class="javax.swing.JTextField" default-binding="true">
+              <component id="d54dd" class="javax.swing.JTextField" binding="passwordField">
                 <constraints>
                   <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
                   </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <text value=""/>
+                </properties>
               </component>
               <hspacer id="f332b">
                 <constraints>

@@ -1,3 +1,4 @@
+import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.sql.*;
 import java.util.Vector;
@@ -85,6 +86,25 @@ public class Database {
 
         closeDb();
         return dataModel;
+    }
+
+    public void addUser(User user){
+        connect();
+        try {
+            String query = "INSERT INTO users(first_name, last_name, password, identif_number, role) VALUES (?,?,?,?,?);";
+            PreparedStatement p_stat = con.prepareStatement(query);
+            p_stat.setString(1, user.getName());
+            p_stat.setString(2, user.getLastname());
+            p_stat.setString(3, user.getPassword());
+            p_stat.setString(4, user.getIdentifyNumber());
+            p_stat.setString(5, user.getRole());
+            int status = p_stat.executeUpdate();
+            p_stat.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
 
     public void closeDb(){

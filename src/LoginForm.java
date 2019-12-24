@@ -35,7 +35,7 @@ public class LoginForm extends JFrame{
                     try{
                         db.connect();
                         db.stat.executeUpdate("USE library_system"); // Use the database with the name "library_system"
-                        String query = ("SELECT * FROM users WHERE identif_number="+identify_num+" AND password="+password+"");
+                        String query = ("SELECT * FROM users WHERE identif_number='"+identify_num+"' AND password='"+password+"'");
                         db.rs = db.stat.executeQuery(query);
                         if(!db.rs.next()){
                             System.out.print("No user");

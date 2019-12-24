@@ -35,6 +35,13 @@ public class AdminForm extends JFrame{
                 viewUsersForm.setVisible(true);
             }
         });
+        addUserButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                AddUser addUserForm = new AddUser();
+                addUserForm.setVisible(true);
+            }
+        });
     }
 
     public static synchronized AdminForm getInstance(){
