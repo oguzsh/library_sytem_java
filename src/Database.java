@@ -135,8 +135,17 @@ public class Database implements IBook{
     }
 
     @Override
-    public void removeBook(int bookId) {
-
+    public void removeBook(String ISBN) {
+        connect();
+        try{
+            String query = "DELETE FROM books WHERE isbn=?;";
+            PreparedStatement p_stat = con.prepareStatement(query);
+            p_stat.setString(1, ISBN);
+            p_stat.executeUpdate();
+            p_stat.close();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
     }
 
     public void closeDb(){

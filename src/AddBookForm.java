@@ -14,20 +14,20 @@ public class AddBookForm extends JFrame {
     AddBookForm(){
         super("Add Book");
         this.setContentPane(this.addBookPanel);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.pack();
 
         Database db = new Database();
 
         addBookButton.addActionListener(new ActionListener() {
-            String bookName = bookNameField.getText();
-            String author = authorField.getText();
-            String releaseDate = releaseDateField.getText();
-            String ISBN = isbnField.getText();
-            String publisher = publisherField.getText();
-
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
+                String bookName = bookNameField.getText();
+                String author = authorField.getText();
+                String releaseDate = releaseDateField.getText();
+                String ISBN = isbnField.getText();
+                String publisher = publisherField.getText();
+
                 Book book = new Book(bookName, author, releaseDate, publisher, ISBN);
                 db.addBook(book);
                 JOptionPane.showMessageDialog(addBookPanel, "Book created");
