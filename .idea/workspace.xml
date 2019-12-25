@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1c0ff3c-6e2e-4d23-9d80-e059c0b6bb3d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/kutuphaneOtomasyonu/AdminForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/kutuphaneOtomasyonu/AdminForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/kutuphaneOtomasyonu/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/kutuphaneOtomasyonu/Database.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/kutuphaneOtomasyonu/Issue.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/kutuphaneOtomasyonu/Issue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/kutuphaneOtomasyonu/UserForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/kutuphaneOtomasyonu/UserForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/kutuphaneOtomasyonu/ViewBooks$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/kutuphaneOtomasyonu/ViewBooks$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/kutuphaneOtomasyonu/ViewBooks.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/kutuphaneOtomasyonu/ViewBooks.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/kutuphaneOtomasyonu/ViewUsers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/kutuphaneOtomasyonu/ViewUsers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AddBookForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddBookForm.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AddUser.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddUser.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AdminForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AdminForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Issue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Issue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserForm.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ViewBooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ViewBooks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ViewUsers.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/ViewUsers.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ViewUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ViewUsers.java" afterDir="false" />
-    </list>
+    <list default="true" id="b1c0ff3c-6e2e-4d23-9d80-e059c0b6bb3d" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
