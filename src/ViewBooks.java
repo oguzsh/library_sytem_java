@@ -17,6 +17,7 @@ public class ViewBooks extends JFrame {
         DefaultTableModel bookDataModel = (DefaultTableModel) booksTable.getModel();
         Database db = new Database();
         booksTable.setModel(db.viewBooks(bookDataModel));
+
         deleteBookButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

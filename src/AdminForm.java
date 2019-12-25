@@ -55,6 +55,20 @@ public class AdminForm extends JFrame{
                 addBookForm.setVisible(true);
             }
         });
+        viewIssuedBooksButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ViewIssuedBooks viewIssuedBooks = new ViewIssuedBooks();
+                viewIssuedBooks.setVisible(true);
+            }
+        });
+        issueBookButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                IssueForm issueForm = new IssueForm();
+                issueForm.setVisible(true);
+            }
+        });
     }
 
     public static synchronized AdminForm getInstance(){

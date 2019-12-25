@@ -95,6 +95,33 @@ public class Database implements IBook{
         return dataModel;
     }
 
+    public DefaultTableModel viewIssued(DefaultTableModel dataModel){
+        connect();
+        try{
+            rs = stat.executeQuery("SELECT * FROM issues");
+            ResultSetMetaData md = rs.getMetaData();
+
+            int columnCount = md.getColumnCount();
+            for(int i = 1; i <= columnCount; i++ ){
+                dataModel.addColumn(md.getColumnName(i));
+            }
+
+            Vector<String> row;
+            while(rs.next()){
+                row = new Vector<>(columnCount);
+                for(int i = 1; i<=columnCount; i++){
+                    row.add(rs.getString(i));
+                }
+                dataModel.addRow(row);
+            }
+        } catch (SQLException e) {
+            System.out.println("Hata : " + e);
+        }
+
+        closeDb();
+        return dataModel;
+    }
+
     public void addUser(User user){
         connect();
         try {
@@ -134,6 +161,24 @@ public class Database implements IBook{
 
     }
 
+
+    public void addIssue(Issue issue){
+        connect();
+        try {
+            String query = "INSERT INTO issues(issue_bookName, issue_Date, issue_ISBN, user_identify) VALUES (?,?,?,?);";
+            PreparedStatement p_stat = con.prepareStatement(query);
+            p_stat.setString(1, issue.getBookName());
+            p_stat.setString(2, issue.getIssuedDate());
+            p_stat.setString(3, issue.getBookISBN());
+            p_stat.setString(4, issue.getUserIDN());
+            p_stat.executeUpdate();
+            p_stat.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
     @Override
     public void removeBook(String ISBN) {
         connect();
@@ -141,6 +186,19 @@ public class Database implements IBook{
             String query = "DELETE FROM books WHERE isbn=?;";
             PreparedStatement p_stat = con.prepareStatement(query);
             p_stat.setString(1, ISBN);
+            p_stat.executeUpdate();
+            p_stat.close();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
+    public void removeUser(String identifNum) {
+        connect();
+        try{
+            String query = "DELETE FROM users WHERE identif_number=?;";
+            PreparedStatement p_stat = con.prepareStatement(query);
+            p_stat.setString(1, identifNum);
             p_stat.executeUpdate();
             p_stat.close();
         }catch (SQLException e){
