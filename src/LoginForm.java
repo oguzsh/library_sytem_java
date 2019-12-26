@@ -45,6 +45,7 @@ public class LoginForm extends JFrame{
                         db.rs = db.stat.executeQuery(query);
                         if(!db.rs.next()){
                             System.out.print("No user");
+                            JOptionPane.showMessageDialog(loginPanel,"No such user, please check your information");
                         }
                         else{
                             db.rs.beforeFirst();  // Kullanıcı bilgileri veri tabanında eşleşmişse tüm veri tabanını taramasını istemiyoruz ve sorgunun başına dönüyoruz

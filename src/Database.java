@@ -3,7 +3,7 @@ import javax.swing.table.DefaultTableModel;
 import java.sql.*;
 import java.util.Vector;
 
-public class Database implements IBook{
+public class Database implements IBook, IUser{
     private Connection con = null;
     public Statement stat = null;
     public ResultSet rs = null;
@@ -13,6 +13,7 @@ public class Database implements IBook{
     private final String url = "jdbc:mysql://localhost:3306/"+dbName+"?serverTimezone=UTC";
     private final String user = "root";
     private final String password = "";
+    public String[] datas = new String[5];
 
     Database(){
         this.connect();
@@ -193,6 +194,31 @@ public class Database implements IBook{
         }
     }
 
+
+    @Override
+    public String[] searchByIdentify(String identifyNo) {
+        connect();
+        try{
+            String query = "SELECT * FROM users WHERE identif_number="+identifyNo;
+            rs = stat.executeQuery(query);
+            while(rs.next()){
+                String firstName = rs.getString("first_name");
+                String lastName = rs.getString("last_name");
+                String password = rs.getString("password");
+                String identifNumber = rs.getString("identif_number");
+                String role = rs.getString("role");
+                datas[0] = firstName;
+                datas[1] = lastName;
+                datas[2] = password;
+                datas[3] = identifNumber;
+                datas[4] = role;
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+    return datas;
+    }
+
     public void removeUser(String identifNum) {
         connect();
         try{
@@ -214,4 +240,6 @@ public class Database implements IBook{
             System.err.println("Hata" + e);
         }
     }
+
+
 }
